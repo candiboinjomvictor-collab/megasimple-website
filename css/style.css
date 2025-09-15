@@ -1,0 +1,64 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; }
+
+/* Navbar */
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 30px; background: #222; color: #fff; position: fixed; width: 100%;
+  top: 0; left: 0; z-index: 1000;
+}
+.navbar .logo { font-size: 22px; font-weight: bold; }
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin: 0 15px; }
+.nav-links a { color: white; text-decoration: none; transition: 0.3s; }
+.nav-links a:hover { color: #00bcd4; }
+.menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+
+/* Hero */
+.hero {
+  height: 100vh; background: linear-gradient(to right, #00c6ff, #0072ff);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; color: #fff; padding: 20px;
+}
+.hero h1 span { color: yellow; }
+.btn {
+  margin-top: 20px; padding: 10px 20px; background: yellow; color: black;
+  border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;
+}
+.btn:hover { background: orange; }
+
+/* Sections */
+section { padding: 80px 20px; text-align: center; }
+.about, .skills, .projects, .contact { background: #f9f9f9; }
+.skills .skill-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.skill { padding: 10px 20px; background: #222; color: #fff; border-radius: 5px; }
+
+.projects .project-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; margin-top: 20px;
+}
+.project-card {
+  background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+input, textarea, button {
+  padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;
+}
+button { background: #0072ff; color: white; cursor: pointer; border: none; }
+button:hover { background: #0056b3; }
+
+/* Footer */
+footer { text-align: center; padding: 20px; background: #222; color: white; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { 
+    position: absolute; top: 60px; right: -200px; background: #222;
+    flex-direction: column; width: 200px; transition: right 0.3s ease;
+  }
+  .nav-links.active { right: 0; }
+  .menu-toggle { display: block; }
+}
